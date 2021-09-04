@@ -6,6 +6,6 @@ database_url = "mysql+mysqlconnector://root:Runo1101@localhost:3306/company"
 
 engine = create_engine(database_url)
 
-sesionlocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
+Sesionlocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
 Base = declarative_base()
