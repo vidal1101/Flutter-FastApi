@@ -41,6 +41,25 @@ async def create_user(entrada:providers.schemas.User,db:Session=Depends(get_db))
     return usuario
 
 
+@routeruser.put("/update-user", response_model=providers.schemas.User)
+async def update_user(usuario_id:int, entrada:providers.schemas.UserUpdate,
+                                                db:Session=Depends(get_db)):
+
+    usuario = db.query(models.usermodel.User).filter_by(id=usuario_id).first()
+    usuario.nombre= entrada.avatar
+    db.commit()
+    db.refresh(usuario)
+    return usuario
+
+
+@routeruser.delete("/delete-user", response_model=providers.schemas.Respuesta)
+async def delete_user(usuario_id:int,db:Session=Depends(get_db) ):
+    usuario = db.query(models.usermodel.User).filter_by(id=usuario_id).first()
+    db.delete(usuario)
+    db.commit()
+    response = providers.schemas.Respuesta(messaje="delete success")
+    return response
+
 
 
 
