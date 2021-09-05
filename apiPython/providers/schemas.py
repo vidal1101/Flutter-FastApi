@@ -1,3 +1,4 @@
+# esquemas segun el caso que desee hacer en la base de datos a traves de la API 
 from typing import Optional
 from pydantic import BaseModel
 

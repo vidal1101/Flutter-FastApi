@@ -1,3 +1,4 @@
+# crear la estructura de la tablas a crear en la base de datos
 from sqlalchemy import Column, Integer, String
 from providers.database import Base
 
