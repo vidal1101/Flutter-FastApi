@@ -10,3 +10,13 @@ class User(Base):
     contrasena = Column(String(200), nullable= False, unique=True)
     estado = Column(Integer)
     avatar = Column(String(400) , nullable=True)
+
+
+class Product(Base):
+    __tablename__='Product'
+    id = Column(Integer, primary_key=True, autoincrement=True, index=True)
+    nameProduct = Column(String(50))
+    description = Column(String(200))
+    price = Column(Integer)
+    imageProduct = Column(String(600), nullable=True)
+    stock = Column(Integer)

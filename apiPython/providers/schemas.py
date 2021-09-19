@@ -17,6 +17,8 @@ class User(BaseModel):
 class UserUpdate(BaseModel):
     avatar:str
 
+class UserGet(BaseModel):
+    username:str
 
 class Respuesta(BaseModel):
     mensaje:str

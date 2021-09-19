@@ -4,11 +4,11 @@ from fastapi.params import Depends
 from sqlalchemy import engine
 from starlette.responses import RedirectResponse
 import models.usermodel 
-from providers.database import Sesionlocal, engine
-from sqlalchemy.orm import session
+from providers.database import engine
 
 #objetos de apirouter a incluir
 from routes.users import mainuser as mainuser
+from routes.products import mainProduct as mainproduct
 
 #crear las tablas de las estructura de la clase. 
 models.usermodel.Base.metadata.create_all(bind=engine)
@@ -21,6 +21,7 @@ app = FastAPI(title="FastAPI-Usuarios",
 
 #includes
 app.include_router(mainuser.routeruser) 
+app.include_router(mainproduct.routerproduct)
 
 
 #route index
