@@ -1,4 +1,4 @@
-#imports for the workspace 
+#importaciones para el espacio de trabajo 
 from fastapi import FastAPI
 from fastapi.params import Depends
 from sqlalchemy import engine
@@ -19,12 +19,12 @@ app = FastAPI(title="FastAPI-Usuarios",
              version="1.0")
 
 
-#includes
+#incluimos los objetos de APIROUTER
 app.include_router(mainuser.routeruser) 
 app.include_router(mainproduct.routerproduct)
 
 
-#route index
+#route index para redireccionar a la documentacion
 @app.get("/")
 async def main():
     return RedirectResponse(url="/docs/")

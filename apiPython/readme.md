@@ -1,5 +1,7 @@
-example of siple-rest-api with fastapi, to use for in any the proyect of fronted.
----------------------------------------------------------------------------------
+
+API. 
+
+estructura de carpeta y rutas
 
 ├── main.py
 
@@ -9,14 +11,29 @@ example of siple-rest-api with fastapi, to use for in any the proyect of fronted
 
 │ │ ├── init.py
 
-│ │ ├── main.py
+│ │ ├── mainuser.py
 
 │ │└── products
 
+│ │ ├── init.py
 
-run del apy.
+│ │ ├── mainProduct.py
 
-    uvicorn main:app --reload   
+│ └── providers
+
+│ │ ├── init.py
+
+│ │ ├── database.py
+
+│ │ ├── schemas.py
+
+│ │ ├── schemaProduct.py
+
+│ └── models
+
+│ │ ├── usermodel.py
+
+-------------------------------------------------------
     
 
 

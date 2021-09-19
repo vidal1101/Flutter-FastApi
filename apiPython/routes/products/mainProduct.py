@@ -20,4 +20,4 @@ def get_db():
 
 @routerproduct.get("/prueba")
 async def pruebaProduct(db:Session=Depends(get_db)):
-    return "success"
+    return "success, in process"
