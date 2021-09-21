@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:userapp/src/widget/color.dart';
 
 class LoginApp extends StatefulWidget {
   @override
@@ -8,33 +9,57 @@ class LoginApp extends StatefulWidget {
 class _LoginAppState extends State<LoginApp> {
   String _username = "";
   String _password = "";
+  Color color1 = HexColor("b74093");
 
   @override
   Widget build(BuildContext context) {
+    var mediaquery = MediaQuery.of(context).size;
     return Scaffold(
-      body: loginHead(),
+      body: loginHead(mediaquery),
     );
   }
 
-  Widget loginHead() {
+  /**
+   * 
+   */
+  Widget loginHead(media) {
     return SingleChildScrollView(
-      child: Container(
-        padding: EdgeInsets.only(left: 20, top: 210, right: 20),
-        child: Column(
-          children: [
-            avatarCircle(),
-            textfieldUser(),
-            textfielPassword(),
-            buttonSession(),
-          ],
-        ),
+      child: Stack(
+        children: <Widget>[
+          headColor(),
+          Container(
+            padding: EdgeInsets.only(left: 40, top: 180, right: 40),
+            child: Column(
+              children: [
+                avatarCircle(),
+                textfieldUser(),
+                textfielPassword(),
+                buttonSession(),
+                textRegister()
+              ],
+            ),
+          ),
+          
+        ],
+      ),
+    );
+  }
+
+  Widget headColor() {
+    return Container(
+      width: 400,
+      height: 240,
+      color: color1,
+      child: Center(
+        child: Text("API Python", 
+        style: TextStyle(fontWeight:  FontWeight.bold ),),
       ),
     );
   }
 
   Widget avatarCircle() {
     return Opacity(
-      opacity: 0.8,
+      opacity: 0.9,
       alwaysIncludeSemantics: true,
       child: CircleAvatar(
         radius: 60.0,
@@ -51,11 +76,11 @@ class _LoginAppState extends State<LoginApp> {
         keyboardType: TextInputType.text,
         decoration: InputDecoration(
           border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(20.0),
+            borderRadius: BorderRadius.circular(25.0),
           ),
           suffixIcon: Icon(Icons.person),
           prefixIcon: Icon(Icons.person_pin),
-          labelText: "Username",
+          labelText: "Usuario",
         ),
         onChanged: (user) {
           setState(() {
@@ -74,11 +99,11 @@ class _LoginAppState extends State<LoginApp> {
         keyboardType: TextInputType.visiblePassword,
         decoration: InputDecoration(
           border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(20.0),
+            borderRadius: BorderRadius.circular(25.0),
           ),
           suffixIcon: Icon(Icons.lock_open),
           prefixIcon: Icon(Icons.lock),
-          labelText: "Password",
+          labelText: "Contraseña",
         ),
         onChanged: (pass) {
           setState(() {
@@ -93,7 +118,7 @@ class _LoginAppState extends State<LoginApp> {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 15),
       child: OutlinedButton(
-        child: Text("Login"),
+        child: Text("Iniciar"),
         style: OutlinedButton.styleFrom(
           primary: Colors.white,
           backgroundColor: Colors.blue,
@@ -107,6 +132,25 @@ class _LoginAppState extends State<LoginApp> {
         ),
         onPressed: () {},
       ),
+    );
+  }
+
+  Widget textRegister() {
+    return GestureDetector(
+      child: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 45),
+        child: Center(
+          child: Row(
+            children: [
+              SizedBox(width: 39,),
+              Text("No tienes Cuenta?" , style: TextStyle(fontSize: 15),),
+              SizedBox(width: 5,),
+              Text("REGISTRARSE", style: TextStyle(fontWeight:  FontWeight.bold ),),
+            ],
+          ),
+        ),
+      ),
+      onTap: (){},
     );
   }
 }
