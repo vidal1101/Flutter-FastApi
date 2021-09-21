@@ -39,7 +39,6 @@ class _LoginAppState extends State<LoginApp> {
               ],
             ),
           ),
-          
         ],
       ),
     );
@@ -52,7 +51,7 @@ class _LoginAppState extends State<LoginApp> {
       color: color1,
       child: Center(
         child: Text("API Python", 
-        style: TextStyle(fontWeight:  FontWeight.bold ),),
+        style: TextStyle(fontWeight: FontWeight.bold ),),
       ),
     );
   }
