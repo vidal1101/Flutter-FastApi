@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:userapp/src/providers/providers_user.dart';
 import 'package:userapp/src/widget/color.dart';
 
 class LoginApp extends StatefulWidget {
@@ -13,6 +14,10 @@ class _LoginAppState extends State<LoginApp> {
 
   @override
   Widget build(BuildContext context) {
+
+    UserProviders userProviders = new UserProviders();
+    userProviders.getUser();
+    
     var mediaquery = MediaQuery.of(context).size;
     return Scaffold(
       body: loginHead(mediaquery),
