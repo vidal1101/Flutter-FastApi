@@ -1,5 +1,6 @@
 # crear la estructura de la tablas a crear en la base de datos
-from sqlalchemy import Column, Integer, String
+from sqlalchemy import Column, Integer, String, ForeignKey
+from sqlalchemy.orm import relationship
 from providers.database import Base
 
 # clase tipo usuario que se crea una tabla en base al modelo de los atributos
@@ -11,6 +12,7 @@ class User(Base):
     contrasena = Column(String(200), nullable= False, unique=True)
     estado = Column(Integer)
     avatar = Column(String(400) , nullable=True)
+    producto = relationship("Product", backref="owner")
 
 
 #clase producto, crea la tabla producto 
@@ -21,4 +23,5 @@ class Product(Base):
     description = Column(String(200))
     price = Column(Integer)
     imageProduct = Column(String(600), nullable=True)
+    user = Column(Integer, ForeignKey("usuario.id"))
     stock = Column(Integer)
