@@ -63,4 +63,41 @@ probar la api apy.
 
 FLUTTER. 
 
-EN PROCESO... 
+App con un login y mostrando informacion de la API
+haciendo uso de las dependencias en el arhivo pubspec.yaml
+
+  http: ^0.12.1
+
+    
+estructura de carpetas de la aplicacion demo, se contendra dentro de userapp
+en la carperta de Lib
+
+├── lib
+
+│ │└── main.dart
+
+│ └── src
+
+│ │└── pages
+
+│ │ ├── myApp.dart
+
+│ │ ├── Login.dart
+
+│ │ ├── homepage.dart
+
+│ │└── widget
+
+│ │ ├── color,dart
+
+│ │└── providers
+
+│ │ ├── providers_user.dart
+
+│ │└── models
+
+│ │ ├── model_user.dart
+
+en caso de posibles errores con los permisos de con null-satefy 
+
+<img src="errorflutter.png">
