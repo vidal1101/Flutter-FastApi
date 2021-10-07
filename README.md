@@ -100,6 +100,7 @@ en la carperta de Lib
 
 en caso de posibles errores con los permisos de con null-satefy 
 
+<<<<<<< HEAD
 
 <img src="errorflutter.png">errorflutter.pngerrorflutter.png
 
@@ -107,3 +108,6 @@ en caso de posibles errores con los permisos de con null-satefy
 -----------------------------
 # Desarrollador
 - Rodrigo Vidal
+=======
+<img src="errorflutter.png">
+>>>>>>> 53ff35dd9cde15982c79bf5e43de9dcec90e02f9
